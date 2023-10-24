@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Classes extends Model
 {
     use HasFactory;
+
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'class_assignment','class_id','student_id');
+    }
 }
